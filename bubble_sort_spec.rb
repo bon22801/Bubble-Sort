@@ -16,3 +16,11 @@ describe "bubble_sort" do
     expect(bubble_sort(array)).to eq([1.1, 2.2, 3.3, 5.5])
     end
 end
+
+describe "bubble_sort_by" do
+    it "sort words with block" do
+    expect(bubble_sort_by(["hi","hello","hey"]) do |left,right|
+        right.length - left.length
+        end).to eq(["hi", "hey", "hello"])
+    end
+end
